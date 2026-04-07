@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusForge | Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>FocusForge</h1>
+    <p>Plan your study, stay focused, and track your progress.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Add Study Task</h2>
+      <form id="taskForm" class="task-form">
+        <input id="taskTitle" type="text" placeholder="Task title" required />
+        <select id="taskPriority" required>
+          <option value="">Priority</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <input id="taskDue" type="date" required />
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>Study Tasks</h2>
+        <button id="clearDoneBtn" class="secondary">Clear Completed</button>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+    <section class="card timer-card">
+      <h2>Focus Timer</h2>
+      <div id="timerDisplay" class="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button data-minutes="25" class="mode-btn active">Pomodoro</button>
+        <button data-minutes="15" class="mode-btn">Short Break</button>
+        <button data-minutes="45" class="mode-btn">Deep Work</button>
+      </div>
+      <div class="timer-actions">
+        <button id="startTimerBtn">Start</button>
+        <button id="pauseTimerBtn" class="secondary">Pause</button>
+        <button id="resetTimerBtn" class="secondary">Reset</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Daily Summary</h2>
+      <div class="stats">
+        <div>
+          <p class="stat-label">Total Tasks</p>
+          <p id="totalTasks" class="stat-value">0</p>
+        </div>
+        <div>
+          <p class="stat-label">Completed</p>
+          <p id="completedTasks" class="stat-value">0</p>
+        </div>
+        <div>
+          <p class="stat-label">Focus Sessions</p>
+          <p id="focusSessions" class="stat-value">0</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for BCSE203E Digital Assignment II</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

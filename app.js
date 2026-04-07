@@ -71,22 +71,19 @@ function renderTasks() {
     checkbox.addEventListener('change', () => toggleTask(task.id));
 
     const content = document.createElement('div');
+    content.className = 'task-content';
     const title = document.createElement('p');
     title.textContent = task.title;
     title.className = `task-title ${task.done ? 'done' : ''}`;
-    title.style.margin = '0';
 
     const meta = document.createElement('p');
     meta.className = 'task-meta';
-    meta.style.margin = '4px 0 0';
     meta.textContent = `Due: ${formatDate(task.due)}`;
 
     content.append(title, meta);
 
     const right = document.createElement('div');
-    right.style.display = 'flex';
-    right.style.alignItems = 'center';
-    right.style.gap = '8px';
+    right.className = 'task-actions';
 
     const priority = document.createElement('span');
     priority.className = `priority ${task.priority}`;
